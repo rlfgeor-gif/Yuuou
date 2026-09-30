@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrailWise Bike — อุทยานดอยหลวง ระบบวางแผนเส้นทางปั่นจักรยาน</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="bar">
+  <div class="logo"><b>🚵 TrailWise Bike</b><small>อุทยานแห่งชาติดอยหลวง · ระบบวางแผนเส้นทางปั่นจักรยาน</small></div>
+  <nav id="nav">
+    <a href="#home">หน้าแรก & เกี่ยวกับเรา</a><a href="#route">วางแผนทริป</a><a href="#map">แผนที่เครือข่าย</a><a href="#places">สถานที่ทั้งหมด</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- HOME -->
+<section class="page" id="home">
+  <div class="hero">
+    <span class="tag">ยินดีต้อนรับสู่อุทยานแห่งชาติดอยหลวง</span>
+    <h1>วางแผนปั่นจักรยานอย่างมั่นใจ ปลอดภัยทุกเส้นทาง</h1>
+    <p>TrailWise Bike คือผู้ช่วยวางแผนเส้นทางปั่นจักรยานเสือภูเขา คำนวณระยะทาง เวลา และจุดแวะพักในอุทยานอย่างแม่นยำ</p>
+    <a class="btn" href="#route">เริ่มวางแผนทริป</a><a class="btn o" href="#map">ดูสำรวจเส้นทาง</a>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="em">📍</div><h3>7 จุดเช็คอินสำคัญ</h3><p>ครอบคลุมน้ำตก ลำธาร ถ้ำ ยอดดอย จุดชมวิว และจุดกางเต็นท์พักแรม</p></div>
+    <div class="card"><div class="em">⏱️</div><h3>คำนวณแม่นยำ</h3><p>ประเมินระยะทางและเวลาปั่น ให้คุณวางแผนได้อย่างปลอดภัย</p></div>
+    <div class="card"><div class="em">🚲</div><h3>ตอบโจทย์นักปั่น</h3><p>เลือกได้ทั้งเส้นทางสั้นที่สุด แวะพักน้อยที่สุด หรือปั่นชมธรรมชาติ</p></div>
+  </div>
+  <h2>จุดหมายไฮไลต์ในอุทยาน</h2><p class="sub">คลิกเพื่อวางแผนไปยังสถานที่นั้นทันที</p>
+  <div class="grid" id="hl"></div>
+  <h2>เกี่ยวกับอุทยานแห่งชาติดอยหลวง</h2>
+  <p class="sub">ผืนป่าธรรมชาติ ลำธาร น้ำตก และยอดดอยสูงที่มีทัศนียภาพงดงาม เหมาะกับการปั่นจักรยานเสือภูเขาและปั่นท่องเที่ยว</p>
+  <div class="grid">
+    <div class="card"><h3>🕒 เวลาทำการอุทยาน</h3><p>เปิดทุกวัน 06:00 – 18:00 น.<br>ไม่อนุญาตให้เริ่มปั่นเข้าเส้นทางหลัง 15:00 น. เพื่อความปลอดภัย</p></div>
+    <div class="card"><h3>📞 ติดต่อศูนย์บริการ</h3><p>โทร: xxx-xxx-xxxx<br>อีเมล: contact@doiluang-trailwise.go.th<br>ที่ตั้ง: ศูนย์บริการนักท่องเที่ยวหลัก</p></div>
+  </div>
+  <h2>ข้อปฏิบัติและคำแนะนำในการปั่น</h2>
+  <div class="grid">
+    <div class="card"><h3>1. สวมหมวกกันน็อกเสมอ</h3><p>สวมหมวกและถุงมือทุกครั้ง เส้นทางมีทางลาดชันและโขดหิน</p></div>
+    <div class="card"><h3>2. ตรวจสภาพจักรยาน</h3><p>เช็กเบรก ลมยาง โซ่ และพกชุดปะยาง/ปั๊มลมสำรอง</p></div>
+    <div class="card"><h3>3. เตรียมน้ำและลงทะเบียน</h3><p>พกน้ำอย่างน้อย 1.5–2 ลิตร และแจ้งเส้นทางที่ศูนย์บริการก่อนออกเดินทาง</p></div>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section class="page" id="route">
+  <h2>ระบบวางแผนทริปปั่นจักรยาน</h2>
+  <p class="sub">เลือกจุดเริ่มต้นและจุดหมาย ระบบจะคำนวณเส้นทางที่ดีที่สุดให้อัตโนมัติ</p>
+  <div class="two">
+    <div class="card">
+      <h3>กำหนดเงื่อนไขการเดินทาง</h3>
+      <label>จุดเริ่มต้น</label><select id="from"></select>
+      <label>จุดหมายปลายทาง</label><select id="to"></select>
+      <label>เงื่อนไขการค้นหาเส้นทาง</label>
+      <label class="opt"><input type="radio" name="mode" value="short" checked><span>เส้นทางสั้นที่สุด (ระยะทางจริง กม.)</span></label>
+      <label class="opt"><input type="radio" name="mode" value="fewest"><span>แวะพักน้อยที่สุด (ผ่านจุดน้อยที่สุด)</span></label>
+      <label class="opt"><input type="radio" name="mode" value="nature"><span>ปั่นชมธรรมชาติ (ผ่านจุดเช็คอินมากที่สุด)</span></label>
+      <button class="btn" id="go" style="width:100%">ค้นหาเส้นทางแนะนำ</button>
+      <div class="note" id="tip"></div>
+    </div>
+    <div>
+      <div class="mapbox" id="rmap"></div>
+      <p class="leg">คลิกที่จุดบนแผนที่เพื่อเปลี่ยนปลายทางได้</p>
+      <div id="res"><p class="sub">กรุณาเลือกจุดเริ่มต้นและปลายทาง แล้วกดค้นหา</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="page" id="map">
+  <h2>แผนที่เครือข่ายเส้นทาง</h2>
+  <p class="sub">เส้นประคือเส้นทางปั่นระหว่างจุด ตัวเลขคือระยะทาง (กม.) คลิกจุดเพื่อดูรายละเอียด</p>
+  <div class="mapbox" id="fmap"></div>
+  <div class="card" id="info" style="margin-top:14px"><p class="sub">คลิกจุดบนแผนที่เพื่อดูข้อมูล</p></div>
+</section>
+
+<!-- PLACES -->
+<section class="page" id="places">
+  <h2>สถานที่และกิจกรรมทั้งหมด</h2>
+  <p class="sub">สำรวจจุดแวะพัก สิ่งอำนวยความสะดวก และกิจกรรมยอดนิยมในอุทยาน</p>
+  <input type="search" id="q" placeholder="ค้นหาสถานที่หรือกิจกรรม">
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="plist"></div>
+</section>
+</main>
+
+<footer>TrailWise Bike — Doi Luang Trail Planner<br>อุทยานแห่งชาติดอยหลวง · © 2026 TrailWise Project. All rights reserved.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
